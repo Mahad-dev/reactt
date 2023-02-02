@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.tableWrapper {
+  padding: 20px;
+  table {
+    min-height: 200px;
+  }
+}
+table {
+  width: 100%;
+  border: 1px solid lightgray;
+  text-align: left;
+}
+table thead {
+  padding: 10px;
+}
+
+tbody {
+  border-bottom: 1px solid lightgray;
+}
+
+th {
+  border: 1px solid lightgray;
+  padding: 2px 4px;
+  cursor: pointer;
+}
+
+.list-container {
+  width: 100%;
+  padding: 2rem 1rem;
+  .search-input {
+    border: 1px solid #cecfd0;
+    border-radius: 18px;
+    padding: 9px 9px 7px 20px;
+    // width: 170px;
+    width: 250px;
+    outline: none;
+  }
+  .first-row {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+  }
+  .drop-down-for-entries {
+    position: relative;
+    cursor: pointer;
+
+    &:hover .entries-list {
+      display: block;
+    }
+  }
+  .select {
+    position: relative;
+  }
+  .manage-column {
+    position: absolute;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px #0000001a;
+    box-sizing: border-box;
+    // display: none;
+    flex-direction: column;
+    font-weight: 400;
+    gap: 4px;
+    // height: 160px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-transform: capitalize;
+
+    // top: 35px;
+    top: 100%;
+    min-width: 100%;
+    z-index: 200;
+    padding: 1rem 0.5rem;
+
+    label {
+      width: 100%;
+      display: flex;
+      // border-bottom: 1px solid gray;
+      border-bottom: 1px solid rgba(217, 215, 215, 0.71);
+      input {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+  .show-entries-list,
+  .show-manage-column {
+    text-align: center;
+    padding: 10px 22px;
+    // width: 150px;
+    width: 250px;
+    background: #e3f1fb;
+    border-radius: 18px;
+    color: #0092ff;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: capitalize;
+  }
+  .select {
+    > div:first-of-type {
+      cursor: pointer;
+    }
+    > div:last-of-type {
+      display: none;
+      .flex {
+        label {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 0.5rem;
+          gap: 1rem;
+        }
+      }
+      &:hover {
+        display: block;
+      }
+    }
+    &:hover {
+      > div:last-of-type {
+        display: block;
+      }
+    }
+  }
+  .entries-list {
+    background: #fff;
+    padding:1rem 0.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px #0000001a;
+    box-sizing: border-box;
+    display: none;
+    flex-direction: column;
+    font-weight: 400;
+    gap: 4px;
+    // left: 15px;
+    position: absolute;
+    // top: 35px;
+    top: 100%;
+    // width: 124px;
+    width: 250px;
+    z-index: 200;
+    > div {
+      // border-bottom: 1px solid gray;
+      border-bottom: 1px solid rgba(217, 215, 215, 0.71);
+      padding: 0.5rem;
+    }
+  }
+
+  .tableWrapper {
+    table {
+      border: none;
+      text-align: center;
+      th {
+        border: none;
+        padding-bottom: 0.25rem;
+        > div {
+          border-bottom: 1px solid;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          height: 40px;
+          justify-content: flex-start;
+        }
+      }
+      tbody{
+        td{
+          padding-top: 0.7rem;
+          padding-bottom: 0.7rem;
+          border-bottom: 1px solid rgba(0,0,0,0.2);
+        }
+      }
+    }
+  }
+  .active {
+    background-color: #0092ff;
+    color: white;
+  }
+}
+
+.pagination {
+  display: flex;
+  margin-top: 1rem;
+  // justify-content: center;
+  justify-content: end;
+  align-items: flex-end;
+  gap: 1rem;
+  > div {
+    // background-color: rgba(0, 0, 255, 0.3);
+    background-color: rgba(45, 137, 213, 0.3);
+    padding: 0.5rem;
+    // border-radius: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    // width: 50px;
+    width: 40px;
+    text-align: center;
+    &.active {
+      // background-color: blue;
+      background-color: rgb(0, 179, 255);
+    }
+  }
+}
+
+.loading-message {
+  height: 30px;
+  width: 30px;
+  border: 2px solid rgba(0, 0, 255, 0.3);
+  animation: rotateAnimation 2000ms linear infinite;
+  border-radius: 50%;
+  border-bottom: 0px;
+  border-left: 0px;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
