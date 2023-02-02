@@ -150,7 +150,7 @@ const HomePage = () => {
             })}
           </div>
         </div>
-        {loadingMessages && <div className="loading-message"></div>}
+        {!loadingMessages && <div className="loading-message"></div>}
       </div>
       <div className="">
         <DataTable

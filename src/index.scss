@@ -229,7 +229,8 @@ th {
 .loading-message {
   height: 30px;
   width: 30px;
-  border: 2px solid rgba(0, 0, 255, 0.3);
+  // border: 2px solid rgba(0, 0, 255, 0.3);
+  border: 3px solid #0091ffe9;
   animation: rotateAnimation 2000ms linear infinite;
   border-radius: 50%;
   border-bottom: 0px;

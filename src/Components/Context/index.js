@@ -15,7 +15,7 @@ const Contexts = ({ children }) => {
       .get("http://jsonplaceholder.typicode.com/photos", {
         params,
       })
-      .then((res) => ({ maxCount: 50, data: res.data }));
+      .then((res) => ({ maxCount: 500, data: res.data }));
     return ab;
   }
   return <Context.Provider value={{ fetchData }}>{children}</Context.Provider>;
